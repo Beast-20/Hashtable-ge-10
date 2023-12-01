@@ -22,6 +22,25 @@ class MyLinkedlist {
     
     }
 
+    public void remove(String s1){
+        if(this.head == null){
+            System.out.println("Hash Table is empty");
+        }
+        else{
+            MyMapNode<String,Integer> temp = this.head;
+            while(temp.next.next!=null && !temp.next.key.equals(s1)){
+                temp = temp.next;
+            }
+            if(temp.next.key.equals(s1)){
+                temp.next = temp.next.next;
+                System.out.println("The word "+s1+" is removed successfully!");
+            }
+            else{
+                System.out.println("No word present in hash of given input");
+            }
+        }
+    }
+
     public void Frequency(){
         MyMapNode<String,Integer> temp = this.head;
         while(temp!=null){
